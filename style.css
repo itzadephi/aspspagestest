@@ -5,7 +5,9 @@
     --font-col-normal: #313540;
     --font-col-mute: rgb(89,99,110);
     --h1-size: 2.5rem;
+    --h2-size: 2rem;
     --font-size-normal: .85rem;
+    --line-height-normal: 1.5rem;
     --space-med: 2rem;
     --space-light: 1rem;
     --space-big: 3rem;
@@ -16,12 +18,24 @@ h1 {
     line-height: 3rem;
 }
 
+h2 {
+    font-size: var(--h2-size);
+    line-height: 2.5rem;
+    font-weight: 500;
+}
+
 body, h1, h2, h3, h4, p {
+    color: var(--font-col-normal);
     margin: 0
+}
+
+body {
+    height: 10000rem;
 }
 
 p {
     font-size: var(--font-size-normal);
+    line-height: var(--line-height-normal);
 }
 
 .deemph {
@@ -30,6 +44,10 @@ p {
 
 .justify-text {
     text-align: justify;
+}
+
+.center-text {
+    text-align: center;
 }
 
 .mtm {
@@ -44,11 +62,21 @@ p {
     margin-top: var(--space-big);
 }
 
+.flex {
+    display: flex;
+}
+
+.center {
+    justify-content: center;
+}
+
 .header {
     width: calc(100vw - 2 * var(--space-light));
     margin-left: var(--space-light);
     margin-right: var(--space-light);
     margin-top: var(--space-med);
+    position: sticky;
+    top:0px;
 }
 
 .site-title {
@@ -57,10 +85,25 @@ p {
     align-items: center;
     width: 100%;
     gap: .5rem;
-
+    background-color: white;
 }
 
 .site-logo {
     object-fit:cover;
     border: 1px solid black;
 }
+
+.main {
+    margin-left: var(--space-light);
+    margin-right: var(--space-light);
+}
+
+.start-button {
+    gap: var(--space-light);
+}
+
+.select-id {
+    width: 10rem;
+    
+}
+
