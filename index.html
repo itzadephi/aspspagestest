@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="main-screen">
-        <header class="header">
+        <header class="header mtm">
             <div class="site-title">
                 <img class="site-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbUek_jTPXZpF47Do26hh12lU7J7oSBeyTdA&s" width="64" height="32">
                 <h1 class="poppins-semibold">FINAL</h1>
@@ -41,8 +41,34 @@
             </div>
         </div>
     </div>
-    <div class="solve-screen">
-        <h2 class="subtest-name"></h2>
+    <div class="solve-screen" style="display: none;">
+        <header class="header mtl">
+            <div class="site-title">
+                <img class="site-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbUek_jTPXZpF47Do26hh12lU7J7oSBeyTdA&s" width="64" height="32">
+                <h2 class="poppins-semibold">FINAL</h2>
+            </div>
+            <div class="timer">
+
+            </div>
+        </header>
+        <div class="main">
+            <div class="card">
+                <div class="profile">
+                    <h4 id="user-name"></h4>
+                </div>  
+            </div>
+            <div class="passage"></div>
+            <div class="option"></div>
+        </div>
+        <div class="times-up-bg">
+            <div class="times-up-popup">
+                <h2 class="center-text">Time's Up</h2>
+                <div class="sp-around full flex mtm">
+                    <button class="green-bg" id="view-result">View Results</button>
+                    <button class="blue-bg" id="view-solution">View Solution</button>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 <script src="index.js"></script>

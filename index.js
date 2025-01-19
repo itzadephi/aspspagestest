@@ -5,6 +5,18 @@ let state_screen = 'main';
 let myname = localStorage.getItem('myname');
 let current_subtest = localStorage.getItem('subtest');
 
+const SUBTEST_TIME = {
+    'Quantitative Reasoning': 600,
+    'Mathematical Reasoning': 900
+    // TODO: Add to these
+};
+
+const SUBTEST_CODE = {
+    'Quantitative Reasoning': 'qr',
+    'Mathematical Reasoning': 'mr'
+    // TODO: Add to these
+}
+
 if(myname == null){
     let rnum = Math.floor(Math.random() * 10000)
     localStorage.setItem('myname', 'user' + rnum);
@@ -25,7 +37,8 @@ lets_go.addEventListener('click', function(ev){
     current_subtest = localStorage.getItem('subtest');
     document.querySelector('.main-screen').style['display'] = 'none';
     state_screen = 'solve';
-    window.history.replaceState(null, '', window.location.href + 'solve');
+    //window.history.pushState(null, '', window.location.href + 'solve');
+    enterSolveState();
 });
 
 function enterMainState(){
@@ -34,13 +47,26 @@ function enterMainState(){
 
 function enterSolveState(){
     document.querySelector('.solve-screen').style['display'] = 'block';
-    
+    loadQuestion(1);
 }
 
-addEventListener('backbutton', (ev) => {
-    if(state_screen == 'solve'){
-        state_screen = 'main';
-        enterMainState();
-        ev.preventDefault();
+function loadQuestion(qn){
+    let passage = fetch('subtests/' + SUBTEST_CODE[current_subtest] + '/p' + qn + '.json')
+    .then((response) => response.json());
+    let question = fetch('subtests/' + SUBTEST_CODE[current_subtest] + '/' + qn + '.json')
+    .then((response) => response.json());
+    document.getElementsByClassName('passage').innerHTML = passage['content'];
+    switch(question['option-type']) {
+        case 'mcq':
+
+            break;
     }
+}
+
+addEventListener('popstate', (ev) => {
+    
 });
+
+setInterval(() => {
+    document.querySelector('.times-up-bg').style['display'] = 'flex';
+}, 3000);
