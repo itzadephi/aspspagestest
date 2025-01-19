@@ -25,7 +25,7 @@ lets_go.addEventListener('click', function(ev){
     current_subtest = localStorage.getItem('subtest');
     document.querySelector('.main-screen').style['display'] = 'none';
     state_screen = 'solve';
-    window.history.replaceState(null, '', window.location.href += '/solve');
+    window.history.replaceState(null, '', window.location.href += 'solve');
 });
 
 function enterMainState(){
