@@ -55,7 +55,7 @@ function loadQuestion(qn){
     .then((response) => response.json());
     let question = fetch('subtests/' + SUBTEST_CODE[current_subtest] + '/' + qn + '.json')
     .then((response) => response.json());
-    document.getElementsByClassName('passage').innerHTML = passage['content'];
+    document.querySelector('.passage').innerHTML = passage['content'];
     switch(question['option-type']) {
         case 'mcq':
 
