@@ -51,9 +51,9 @@ function enterSolveState(){
 }
 
 function loadQuestion(qn){
-    let passage = fetch('subtests/' + SUBTEST_CODE[current_subtest] + '/p' + qn + '.json')
+    let passage = fetch('https://itzadephi.github.io/aspspagestest/subtests/' + SUBTEST_CODE[current_subtest] + '/p' + qn + '.json')
     .then((response) => response.json());
-    let question = fetch('subtests/' + SUBTEST_CODE[current_subtest] + '/' + qn + '.json')
+    let question = fetch('https://itzadephi.github.io/aspspagestest/subtests/' + SUBTEST_CODE[current_subtest] + '/' + qn + '.json')
     .then((response) => response.json());
     document.querySelector('.passage').innerHTML = passage['content'];
     switch(question['option-type']) {
